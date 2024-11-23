@@ -11,6 +11,9 @@ class UserCreateForm(UserCreationForm):
         It can also used in situations where you want to reference the user model but do not want to directly rely on
         Django's default auth.User model.
         This function ensures compatibility with custom user models.
+        Using get_user_model ensures the code will work regardless of whether you are using the default 
+        auth.User or a custom user model. This makes the application more maintainable and adaptable.
+        **This project uses the default auth.User model.
         """
         model = get_user_model()
 

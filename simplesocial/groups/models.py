@@ -8,7 +8,16 @@ import misaka
 # Create your models here.
 from django.contrib.auth import get_user_model
 
-# this allows you to call things off the current user session
+"""
+get_user_model is a utility function provided by Django to retrieve the currently
+active user model in your project.
+It dynamically fetches the user model being used in your Django project.
+Doing this all
+It can also used in situations where you want to reference the user model but do not want to directly rely on
+Django's default auth.User model.
+This function ensures compatibility with custom user models.
+This allows the User model to be used as a Foreign Key field in the models present.
+"""
 User = get_user_model()
 
 from django import template
