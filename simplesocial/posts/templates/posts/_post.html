@@ -1,18 +1,23 @@
 <div class="post media">
     <h3>{{ post.message_html|safe }}</h3>
     <div class="media-body">
-        <strong>{{ post.user.username }}</strong>
+        {#        <h4><strong>{{ post.user.username }}</strong></h4>#}
         <h5 class="media-heading">
-            <span class="username">
-                <a href="{% url 'posts:for_user' username=post.user.username %}"></a>
-            </span>
-            <time class="time">
-                <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}"></a>
+            <span class="username"><a
+                    href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
+
+            <p></p>
+            <time class="time"><a
+                    href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a>
             </time>
+            {% if post.group %}
+                <span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+            {% endif %}
+            <p></p>
         </h5>
         <div class="media-footer">
-            {% if user.is_authenticated and post.user == user %}
-                <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-default">
+            {% if user.is_authenticated and post.user == user and not hide_delete %}
+                <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-light">
                     <span class="text-danger icon-label" aria-hidden="true">Delete</span></a>
             {% else %}
             {% endif %}

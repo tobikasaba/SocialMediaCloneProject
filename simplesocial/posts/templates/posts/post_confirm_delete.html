@@ -15,13 +15,13 @@
         If you want to refer to it as post in your template (which might be more appropriate for a blog post),
         you need to explicitly pass it using the {% include %} tag or use object directly in the template.
         {% endcomment %}
-        {% include 'posts/_post.html' with post=object hide_delete = True %}
+        {% include 'posts/_post.html' with post=object hide_delete=True %}
     </div>
-
     <form action="" method="post">
+        <br>
         {% csrf_token %}
         <input type="submit" value="Confirm Delete" class="btn btn-danger btn-lg">
         <a href="{% url 'posts:single' username=user.username pk=object.pk %}"
-           class="btn btn-default btn-lg ">Cancel</a>
+           class="btn btn-warning btn-lg ">Cancel</a>
     </form>
 {% endblock %}

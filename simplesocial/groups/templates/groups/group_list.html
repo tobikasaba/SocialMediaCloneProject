@@ -1,4 +1,4 @@
-{% extends 'group/group_base.html' %}
+{% extends 'groups/group_base.html' %}
 {% block pregroup %}
     <div class="col-md-4">
         <div class="content">
@@ -27,11 +27,11 @@
                         {{ group.description_html|safe }}
                         <div class="row">
                             <div class="col-md-4">
-                                <span class="badge">{{ group.members.count }}</span>
+                                <span class="edge">{{ group.members.count }}</span>
                                 member{{ group.members.count|pluralize }}
                             </div>
                             <div class="col-md-4">
-                                <span class="edge">{{ group.members.count }}</span>
+                                <span class="edge">{{ group.posts.count }}</span>
                                 post{{ group.posts.count|pluralize }}
                             </div>
                         </div>

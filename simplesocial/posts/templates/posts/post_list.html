@@ -1,4 +1,4 @@
-{% extends 'posts/post_base_html' %}
+{% extends 'posts/post_base.html' %}
 
 {% block pre_post_content %}
     <div class="col-md-4">
@@ -34,7 +34,7 @@
 {% block post_content %}
     <div class="col-md-8">
         {% for post in post_list %}
-            {% include 'post/_post.html' %}
+            {% include 'posts/_post.html' %}
         {% endfor %}
 
     </div>

@@ -27,7 +27,7 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('groups:single', kwargs={'slug': self.kwargs.get('slug')})
 
-    def get_self_request(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         group = get_object_or_404(Group, slug=self.kwargs.get('slug'))
 
         try:

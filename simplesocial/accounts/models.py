@@ -12,4 +12,4 @@ class User(models.User, models.PermissionsMixin):
 
     def __str__(self):
         # username is an inbuilt attribute in django's user
-        return f"a{self.username}"
+        return f"@{self.username}"
