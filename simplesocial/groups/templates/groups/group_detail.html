@@ -14,10 +14,13 @@
 {% block group_content %}
     <div class="col-md-8">
         {% if group.posts.count == 0 %}
+            <br>
             <h2>No Posts in this group yet!</h2>
         {% else %}
             <br>
+            <br>
             <h2>Posts</h2>
+            <hr>
             {% for post in group.posts.all %}
                 {% comment %} includes functionality is similar to {% extends '....' %} except you are inserting the
                  content of another template into the current template at a specific location.

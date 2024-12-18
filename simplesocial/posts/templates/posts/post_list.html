@@ -32,9 +32,12 @@
     </div>
 {% endblock %}
 {% block post_content %}
+    <h1 class="listofposts">List of Posts</h1>
     <div class="col-md-8">
+        <br>
         {% for post in post_list %}
             {% include 'posts/_post.html' %}
+            <hr>
         {% endfor %}
 
     </div>

@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    /*overflow: hidden;*/
+    padding-top: 100px;
+}
+
+.homepage {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    min-height: 70vh; /* Make the body take up the full height of the viewport */
+    margin: 0;
+}
+
+.form-text {
+    color: white !important;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.listofposts {
+    text-align: center;
+}
