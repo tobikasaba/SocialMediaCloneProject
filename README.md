@@ -2,6 +2,7 @@ Social Media Platform
 
 Features:
   User Registration: Secure, case-sensitive username and password.
+  
   Group Management:
   Create, join, and leave groups with ease.
   
